@@ -29,7 +29,7 @@ ul li {
     background-repeat: no-repeat;
     background-position: -1%;
     height: 40rem;
-    width: 100%;
+    width: 90%;
 }
 
 .i-css {
@@ -42,11 +42,31 @@ ul li {
 }
 
 .i-js {
-
     background-image: url("images/logos.png");
     background-size: 23em;
     background-repeat: no-repeat;
     background-position: 103%;
     height: 40rem;
     width: 100%;
+}
+
+@media (min-width: 1920px) {
+    ul li {
+        width: 20%;
+    }
+
+    .i-html {
+        background-position: -2%;
+        width: 100%;
+    }
+
+    .i-css {
+        width: 100%;;
+        background-position: 50%;
+    }
+
+    .i-js {
+        width: 100%;
+        background-position: 103%;
+    }
 }
