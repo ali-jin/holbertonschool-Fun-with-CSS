@@ -1,0 +1,91 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.toggle {
+    background-color: rgb(204, 204, 204);
+    width: 200px;
+    height: 70px;
+    position: relative;
+    display: inline-block;
+    border-radius: 60px;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.toggle input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    z-index: 3;
+}
+
+.toggle .toggle-label {
+    background-color: rgb(235, 235, 235);
+    position: absolute;
+    width: 115%;
+    height: 100%;
+    border: 3px solid rgb(204, 204, 204);
+    border-radius: 68px;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.toggle .toggle-switch {
+    position: absolute;
+    top: -8px;
+    left: -10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(204, 204, 204);
+    transition: transform 0.2s;
+}
+
+.toggle .toggle-label::before {
+    content: 'No';
+    position: absolute;
+    color: rgb(177, 171, 171);
+    font-size: 40px;
+    line-height: 68px;
+    transform: translate(-50%, -50%);
+    right: 15%;
+    top: 50%;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: opacity 0.2;
+}
+
+.toggle .toggle-label::after {
+    content: 'Yes';
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    line-height: 68px;
+    transform: translate(-50%, -50%);
+    right: 30%;
+    top: 50%;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: opacity 0.2;
+    opacity: 0;
+}
+
+.toggle input[type="checkbox"]:checked + .toggle-label {
+    background-color: rgb(225, 1, 60);
+}
+
+.toggle input[type="checkbox"]:checked + .toggle-label .toggle-switch {
+    transform: translateX(175px);
+}
+
+.toggle input[type="checkbox"]:checked + .toggle-label::before {
+    opacity: 0;
+}
+
+.toggle input[type="checkbox"]:checked + .toggle-label::after {
+    opacity: 1;
+}
